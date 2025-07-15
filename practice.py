@@ -106,7 +106,7 @@ with col2:
 
 
 
-        if st.button("Create New Account", key="create", help="Create a new Facebook account"):
-            
-            url = "https://www.facebook.com/r.php?entry_point=login"
-            webbrowser.open(url)
+    if st.button("Create New Account", key="create", help="Create a new Facebook account"):
+        
+        url = "https://www.facebook.com/r.php?entry_point=login"
+        webbrowser.open(url)
