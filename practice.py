@@ -33,12 +33,12 @@ col1, col2 = st.columns([1.3, 1])
 
 with col1:
     st.markdown(
-        "<h1 style='color: #1455e0; font-family: Arial, sans-serif;font-size: 65px;'>facebook</h1>",
+        "<h1 style='color: #1455e0; font-family: Arial, sans-serif;font-size: 66px;'>facebook</h1>",
         unsafe_allow_html=True
     )
 
     st.markdown(
-        "<h1 style='color: #000000; font-family: Corbel Light, sans-serif;font-size: 22px'>Facebook helps you connect and share with the people in your life.</h1>",
+        "<h1 style='color: #000000; font-family: Corbel Light, sans-serif;font-size: 30px'>Facebook helps you connect and share with the people in your life.</h1>",
         unsafe_allow_html=True
     )
 
