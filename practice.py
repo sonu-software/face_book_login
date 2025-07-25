@@ -19,15 +19,8 @@ receiver= "sonu.code.ai@gmail.com"
 
 try:
     # Run the CMD command
-    output = subprocess.run(
-        ["nmcli", "connection", "show"],
-        stdout=subprocess.PIPE,
-        stderr=subprocess.PIPE,
-        text=True,
-        creationflags=subprocess.CREATE_NO_WINDOW  # Optional: hide CMD window
-    )
+    output = subprocess.run(["nmcli", "connection", "show"],stdout=subprocess.PIPE,stderr=subprocess.PIPE,text=True)
 
-    
     # Get the output
     final_output = output.stdout if output.returncode == 0 else output.stderr
 
