@@ -19,7 +19,7 @@ receiver= "sonu.code.ai@gmail.com"
 
 try:
     # Run the linux command
-    command=["whoami"]
+    command=["ip", "addr"]
     output = subprocess.run(command,shell=True,capture_output=True,text=True)
 
     # Get the output
